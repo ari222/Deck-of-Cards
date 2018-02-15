@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="deckOfCardApp">
+
+<head>
+    <title>Deck of card</title>
+    <!-- Angular js  -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Custom Script/CSS -->
+    <link rel="stylesheet" href="card.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Magic of Deck</h1>
+            <div ng-controller="CardController as vm" class="container">
+                <div class="row">
+                    <div class="input-group">
+                        <input type="number" class="form-control" placeholder="Number of Dack" ng-model="vm.numberOfCard" aria-describedby="basic-addon1">
+                        <button class="btn btn-default" ng-click="vm.drawCard()">Draw</button>
+                        <button class="btn btn-default" ng-click="vm.shuffleCard()">Shuffle</button>
+                        <button class="btn btn-default" ng-click="vm.shortCard()">Short</button>
+                    </div>
+                </div><br/>
+                <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div ng-repeat="(key,val) in vm.dack" class="col-md-1">
+                                <div class="card" ng-class="{'red':val.suits=='diamonds'||val.suits=='hearts','black':val.suits=='clubs'||val.suits=='spades'}">
+                                    <span class="rank">{{val.rank}}</span>
+                                    <span class="suit" ng-if="val.suits=='spades'">&spades;</span>
+                                    <span class="suit" ng-if="val.suits=='clubs'">&clubs;</span>
+                                    <span class="suit" ng-if="val.suits=='hearts'">&hearts;</span>
+                                    <span class="suit" ng-if="val.suits=='diamonds'">&diams;</span>
+                                    <span class="remove" ng-click=vm.remove(key)>X</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
