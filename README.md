@@ -21,6 +21,8 @@ Now start up a server with:
 
 webdriver-manager start
 
+Update URl inside browser.get('http://localhost/deck/'); as per your deployment environment
+
 #Run the test
 
 Now run the test with:
