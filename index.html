@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Custom Script/CSS -->
+    <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="card.css">
 </head>
 
@@ -22,9 +23,9 @@
                 <div class="row">
                     <div class="input-group">
                         <input type="number" class="form-control" placeholder="Number of Dack" ng-model="vm.numberOfCard" aria-describedby="basic-addon1">
-                        <button class="btn btn-default" ng-click="vm.drawCard()">Draw</button>
-                        <button class="btn btn-default" ng-click="vm.shuffleCard()">Shuffle</button>
-                        <button class="btn btn-default" ng-click="vm.shortCard()">Short</button>
+                        <button class="btn btn-default" id="draw" ng-click="vm.drawCard()">Draw</button>
+                        <button class="btn btn-default" id="shuffle" ng-click="vm.shuffleCard()">Shuffle</button>
+                        <button class="btn btn-default" id="sort" ng-click="vm.shortCard()">Short</button>
                     </div>
                 </div><br/>
                 <div class="row">
@@ -46,7 +47,6 @@
             </div>
         </div>
     </div>
- <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
